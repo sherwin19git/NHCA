@@ -104,15 +104,88 @@ if (contactForm) {
             return;
         }
 
-        // In a real application, you would send this to a server
-        // For now, we'll show a success message
-        console.log('Form Data:', formData);
+        // Send to Discord webhook
+        sendToDiscord(formData);
 
         // Show success message
         showSuccessMessage();
 
         // Reset form
         contactForm.reset();
+    });
+}
+
+// Send form data to Discord webhook
+function sendToDiscord(formData) {
+    const webhookUrl = 'https://discord.com/api/webhooks/1455909882573361265/TO2-Wal8LAGjzPPBcXiJj93yBtQp_1WME8c3yhZv6fPw-ry7RiHVfRmoLjpHGHjOjr8K';
+
+    const embed = {
+        title: '🏍️ New NHCA Inquiry',
+        color: 0xffd700,
+        fields: [
+            {
+                name: '👤 Full Name',
+                value: formData.name,
+                inline: false
+            },
+            {
+                name: '📧 Email Address',
+                value: formData.email,
+                inline: true
+            },
+            {
+                name: '📞 Phone Number',
+                value: formData.phone || 'Not provided',
+                inline: true
+            },
+            {
+                name: '📍 City/Location',
+                value: formData.location,
+                inline: true
+            },
+            {
+                name: '🏍️ Bike Model',
+                value: formData.bikeModel || 'Not specified',
+                inline: true
+            },
+            {
+                name: '❓ Inquiry Type',
+                value: formData.inquiry,
+                inline: false
+            },
+            {
+                name: '💬 Message',
+                value: formData.message || 'No message provided',
+                inline: false
+            }
+        ],
+        footer: {
+            text: 'NHCA Pangasinan Chapter',
+            icon_url: 'https://discord.com/api/webhooks/1455909882573361265/TO2-Wal8LAGjzPPBcXiJj93yBtQp_1WME8c3yhZv6fPw-ry7RiHVfRmoLjpHGHjOjr8K'
+        },
+        timestamp: new Date()
+    };
+
+    const payload = {
+        embeds: [embed]
+    };
+
+    fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('Inquiry sent to Discord successfully!');
+        } else {
+            console.error('Failed to send to Discord:', response.status);
+        }
+    })
+    .catch(error => {
+        console.error('Error sending to Discord:', error);
     });
 }
 
