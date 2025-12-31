@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHCA Pangasinan Chapter - National Honda Click Association</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="logo.png" alt="NHCA Logo" class="logo-img">
+                <span class="brand-text">NHCA Pangasinan Chapter</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#works" class="nav-link">Works</a></li>
+                <li><a href="#contact" class="nav-link">Join Us</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to NHCA Pangasinan</h1>
+            <p class="hero-subtitle">Pangasinan Chapter</p>
+            <p class="hero-description">Riding Together, Building Community. One Click at a Time in Pangasinan.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('contact')">Join Us Today</button>
+                <button class="btn btn-secondary" onclick="scrollToSection('works')">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About NHCA</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Who We Are</h3>
+                    <p>The NHCA Pangasinan Chapter is a vibrant community of Honda Click motorcycle enthusiasts based in Pangasinan, Philippines. We are dedicated to promoting safe riding, sharing passion for motorcycles, and building lasting friendships within our region.</p>
+                    <p>Our members are riders from all walks of life in Pangasinan, united by their love for Honda Click bikes and the open road. We organize regular meetups, group rides, and community events throughout the province. Above all, we are passionate about giving back to our community through charity rides and helping those in need, because we believe that being a part of a motorcycle club means being a responsible and caring member of society.</p>
+                </div>
+                <div class="about-stats">
+                    <button class="btn btn-primary" id="charityImagesBtn">View Our Charity Rides</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charity Rides Modal -->
+    <div id="charityModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Our Charity Rides Gallery</h2>
+            <div class="modal-gallery">
+                <div class="gallery-item">
+                    <img src="charity1.jpg" alt="Charity Ride 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="charity2.jpg" alt="Charity Ride 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="charity3.jpg" alt="Charity Ride 3">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Works Section -->
+    <section id="works" class="works">
+        <div class="container">
+            <h2>Our Works & Activities</h2>
+            <div class="works-grid">
+                <div class="work-card">
+                    <div class="work-icon">🚗</div>
+                    <h3>Group Rides</h3>
+                    <p>Monthly organized group rides across scenic routes and cities. Safe, fun, and community-focused riding experiences for all levels.</p>
+                </div>
+                <div class="work-card">
+                    <div class="work-icon">❤️</div>
+                    <h3>Community Service</h3>
+                    <p>Active participation in charity rides, disaster relief efforts, and community outreach programs throughout the Philippines.</p>
+                </div>
+                <div class="work-card">
+                    <div class="work-icon">🎉</div>
+                    <h3>Social Events</h3>
+                    <p>Annual meets, bike shows, and social gatherings. Network with fellow enthusiasts and celebrate the NHCA community.</p>
+                </div>
+                <div class="work-card">
+                    <div class="work-icon">🤝</div>
+                    <h3>Charity Rides</h3>
+                    <p>Special organized rides to support charitable causes. Giving back to the community while enjoying the passion of riding together.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Join Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Join the Ride</h2>
+            <p class="contact-subtitle">Interested in joining NHCA? Send us your inquiry or fill out the membership form below.</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="info-item">
+                        <span class="info-label">📍 Location:</span>
+                        <p>Pangasinan</p>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">📞 Contact:</span>
+                        <p>09815432323</p>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">📧 Email:</span>
+                        <p>info@nhca.ph</p>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">🌐 Follow Us:</span>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/NHCAPANGASINANCHAPTER" target="_blank" class="social-link">Facebook</a>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">City/Location *</label>
+                        <input type="text" id="location" name="location" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bikeModel">Honda Click Model</label>
+                        <select id="bikeModel" name="bikeModel">
+                            <option>Select your bike model</option>
+                            <option>Click 125i</option>
+                            <option>Click 110i</option>
+                            <option>Click125i ABS</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inquiry">How can we help? *</label>
+                        <select id="inquiry" name="inquiry" required>
+                            <option>Select inquiry type</option>
+                            <option>Join Membership</option>
+                            <option>General Inquiry</option>
+                            <option>Event Participation</option>
+                            <option>Partnership</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us more about yourself..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 NHCA Pangasinan Chapter. All rights reserved.</p>
+            <p>Ride Safe. Ride Together. Build Community in Pangasinan.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
